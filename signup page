@@ -1,0 +1,26 @@
+package javamaven.seleniumpratice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class zintrl {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		WebDriverManager.chromedriver().setup();
+WebDriver d=new ChromeDriver();
+
+d.get("https://zintlr.com/sign-up");
+d.findElement(By.name("email")).sendKeys("anithadamarla0313@gmail.com");
+d.findElement(By.cssSelector("#__next > main > section > div > div.my-9 > div > form > div.flex > button")).click();
+
+d.get("https://app.zintlr.com/register");
+d.findElement(By.id("name")).sendKeys("anitha");
+
+	}
+}
