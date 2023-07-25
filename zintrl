@@ -1,0 +1,31 @@
+package javamaven.seleniumpratice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class zintrl {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		WebDriverManager.chromedriver().setup();
+WebDriver d=new ChromeDriver();
+d.get("https://app.zintlr.com/register");
+d.findElement(By.id("name")).sendKeys("anitha");
+
+d.findElement(By.name("email")).sendKeys("anithadamarla0313@gmail.com");
+WebElement s=d.findElement(By.name("countryCode"));
+Select drop=new Select(s);
+drop.selectByValue("+91");
+d.findElement(By.id("phone")).sendKeys("6305086819");
+d.findElement(By.id("password")).sendKeys("12345");
+d.findElement(By.id("confirmPassword")).sendKeys("12345");
+d.findElement(By.id("privacy")).click();
+d.findElement(By.cssSelector("#__next > div.container_div.hide_scrollbar_div > div > div > div.w-full.h-full.flex.flex-row.text-center.bg-\\[\\#faf8ff\\].lg\\:bg-none.justify-center.items-center > div.w-4\\/5.lg\\:w-full.h-4\\/5.lg\\:h-full.mx-auto.max-w-\\[550px\\].\\32 xl\\:max-w-\\[550px\\].rounded-xl.lg\\:rounded-3xl.px-4.py-2.lg\\:py-0.lg\\:pt-\\[60px\\].text-left.overflow-y-auto.scrollable_div.flex.items-center.flex-col.lg\\:justify-center.bg-\\[\\#fff\\].lg\\:bg-\\[\\#faf8ff\\].border.lg\\:border-0.shadow-lg.lg\\:shadow-none > form > button")).click();
+	}
+
+}
